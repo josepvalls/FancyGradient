@@ -143,7 +143,7 @@ margin_left = 60.0
 margin_top = 61.0
 margin_right = 316.0
 margin_bottom = 88.0
-text = "Built in Gradient"
+text = "Built-in Gradient"
 align = 1
 
 [node name="Label2" type="Label" parent="."]
