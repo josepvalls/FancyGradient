@@ -1,12 +1,13 @@
-tool
+@tool
+@icon("res://addons/FancyGradient/FancyGradient.svg")
 class_name RepeatingGradient
 extends Gradient
 
 # RepeatingGradient Gradientextension
 
-export(int) var repetitions = null setget _update_repetitions
-export(Gradient) var gradient: Gradient = null setget _update_gradient
-export var repeat_back_to_back := true setget _update_repeat_back_to_back
+@export var repetitions: int = 0 : set = _update_repetitions
+@export var gradient: Gradient = null : set = _update_gradient
+@export var repeat_back_to_back : bool = true : set = _update_repeat_back_to_back
 
 
 func _update():
@@ -23,9 +24,8 @@ func _update():
 				else:
 					offsets_.append(gradient.get_offset(j) * gradient_delta + i * gradient_delta)
 					colors_.append(gradient.get_color(j))
-	
-	offsets = PoolRealArray(offsets_)
-	colors = PoolColorArray(colors_)
+	offsets = PackedFloat32Array(offsets_)
+	colors = PackedColorArray(colors_)
 
 
 func _update_repeat_back_to_back(value):

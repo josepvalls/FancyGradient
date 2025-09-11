@@ -1,11 +1,12 @@
-tool
+@tool
+@icon("res://addons/FancyGradient/FancyGradient.svg")
 class_name FancyGradient
 extends Gradient
 
 # FancyGradient Gradient extension
 
-export(Array, Color) var custom_colors = [Color.white, Color.black] setget _update_custom_colors
-export(int, "Don't add", "Gamma", "sRGB") var add_corrected_middle_point = 0 setget _update_corrected
+@export var custom_colors: Array[Color] = [Color.WHITE, Color.BLACK] : set = _update_custom_colors
+@export_enum("Don't add", "Gamma", "sRGB") var add_corrected_middle_point: int = 0 : set = _update_corrected
 
 
 func _update():
@@ -22,13 +23,11 @@ func _update():
 					colors_.append(blend_colors_gamma_corrected(custom_colors[i], custom_colors[i + 1], 0.5))
 				2:
 					colors_.append(blend_colors_srgb(custom_colors[i], custom_colors[i + 1], 0.5))
-					
-		
 	colors_.append(custom_colors[-1])
 	offsets_.append(1.0)
 
-	offsets = PoolRealArray(offsets_)
-	colors = PoolColorArray(colors_)
+	offsets = PackedFloat32Array(offsets_)
+	colors = PackedColorArray(colors_)
 
 
 func _update_custom_colors(value):
@@ -108,5 +107,5 @@ func blend_colors_srgb(color1: Color, color2: Color, t: float) -> Color:
 	t = clamp(t, 0.0, 1.0)
 	var linear1 = srgb_to_linear(color1)
 	var linear2 = srgb_to_linear(color2)
-	var blended = linear1.linear_interpolate(linear2, t)
+	var blended = linear1.lerp(linear2, t)
 	return linear_to_srgb(blended)

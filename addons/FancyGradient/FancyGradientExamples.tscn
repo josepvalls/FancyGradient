@@ -1,163 +1,149 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=16 format=3 uid="uid://doe3saani861a"]
 
-[ext_resource path="res://addons/FancyGradient/RepeatingGradient.gd" type="Script" id=1]
-[ext_resource path="res://addons/FancyGradient/FancyGradient.gd" type="Script" id=2]
+[ext_resource type="Script" uid="uid://iuiu5wwyshje" path="res://addons/FancyGradient/RepeatingGradient.gd" id="1"]
+[ext_resource type="Script" uid="uid://bbb6tckgqdeiu" path="res://addons/FancyGradient/FancyGradient.gd" id="2"]
 
-[sub_resource type="Gradient" id=1]
-colors = PoolColorArray( 1, 0, 0, 1, 0, 1, 0, 1 )
+[sub_resource type="Gradient" id="1"]
+colors = PackedColorArray(1, 0, 0, 1, 0, 1, 0, 1)
 
-[sub_resource type="GradientTexture2D" id=2]
-gradient = SubResource( 1 )
+[sub_resource type="GradientTexture2D" id="2"]
+gradient = SubResource("1")
 width = 256
 height = 256
 fill = 1
-fill_to = Vector2( 1, 1 )
+fill_to = Vector2(1, 1)
 
-[sub_resource type="Gradient" id=12]
-offsets = PoolRealArray( 0, 0.490826, 1 )
-colors = PoolColorArray( 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 1 )
+[sub_resource type="Gradient" id="12"]
+offsets = PackedFloat32Array(0, 0.490826, 1)
+colors = PackedColorArray(1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 1)
 
-[sub_resource type="GradientTexture2D" id=13]
-gradient = SubResource( 12 )
+[sub_resource type="GradientTexture2D" id="13"]
+gradient = SubResource("12")
 width = 256
 height = 256
 fill = 1
-fill_to = Vector2( 1, 1 )
+fill_to = Vector2(1, 1)
 
-[sub_resource type="Gradient" id=3]
-offsets = PoolRealArray( 0, 0.5, 1 )
-colors = PoolColorArray( 1, 0, 0, 1, 0.72974, 0.72974, 0, 1, 0, 1, 0, 1 )
-script = ExtResource( 2 )
-custom_colors = [ Color( 1, 0, 0, 1 ), Color( 0, 1, 0, 1 ) ]
+[sub_resource type="Gradient" id="3"]
+offsets = PackedFloat32Array(0, 0.5, 1)
+colors = PackedColorArray(1, 0, 0, 1, 0.72974, 0.72974, 0, 1, 0, 1, 0, 1)
+script = ExtResource("2")
+custom_colors = Array[Color]([Color(1, 0, 0, 1), Color(0, 1, 0, 1)])
 add_corrected_middle_point = 1
 
-[sub_resource type="GradientTexture2D" id=4]
-gradient = SubResource( 3 )
+[sub_resource type="GradientTexture2D" id="4"]
+gradient = SubResource("3")
 width = 256
 height = 256
 fill = 1
-fill_to = Vector2( 1, 1 )
+fill_to = Vector2(1, 1)
 
-[sub_resource type="Gradient" id=5]
-offsets = PoolRealArray( 0, 0.25, 0.5, 0.75, 1 )
-colors = PoolColorArray( 1, 0, 0, 1, 0.72974, 0.72974, 0, 1, 0, 1, 0, 1, 0, 0.72974, 0.72974, 1, 0, 0, 1, 1 )
-script = ExtResource( 2 )
-custom_colors = [ Color( 1, 0, 0, 1 ), Color( 0, 1, 0, 1 ), Color( 0, 0, 1, 1 ) ]
+[sub_resource type="Gradient" id="5"]
+offsets = PackedFloat32Array(0, 0.25, 0.5, 0.75, 1)
+colors = PackedColorArray(1, 0, 0, 1, 0.72974, 0.72974, 0, 1, 0, 1, 0, 1, 0, 0.72974, 0.72974, 1, 0, 0, 1, 1)
+script = ExtResource("2")
+custom_colors = Array[Color]([Color(1, 0, 0, 1), Color(0, 1, 0, 1), Color(0, 0, 1, 1)])
 add_corrected_middle_point = 1
 
-[sub_resource type="GradientTexture2D" id=6]
-gradient = SubResource( 5 )
+[sub_resource type="GradientTexture2D" id="6"]
+gradient = SubResource("5")
 width = 256
 height = 256
 fill = 1
-fill_to = Vector2( 1, 1 )
+fill_to = Vector2(1, 1)
 
-[sub_resource type="Gradient" id=7]
+[sub_resource type="Gradient" id="7"]
 interpolation_mode = 1
-offsets = PoolRealArray( 0, 0.585714 )
-colors = PoolColorArray( 1, 0, 0, 1, 0, 1, 0, 1 )
+offsets = PackedFloat32Array(0, 0.585714)
+colors = PackedColorArray(1, 0, 0, 1, 0, 1, 0, 1)
 
-[sub_resource type="Gradient" id=8]
+[sub_resource type="Gradient" id="8"]
 interpolation_mode = 1
-offsets = PoolRealArray( 0, 0.0585714, 0.1, 0.158571, 0.2, 0.258571, 0.3, 0.358571, 0.4, 0.458571, 0.5, 0.558571, 0.6, 0.658571, 0.7, 0.758571, 0.8, 0.858571, 0.9, 0.958571 )
-colors = PoolColorArray( 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 1 )
-script = ExtResource( 1 )
+offsets = PackedFloat32Array(0, 0.0585714, 0.1, 0.158571, 0.2, 0.258571, 0.3, 0.358571, 0.4, 0.458571, 0.5, 0.558571, 0.6, 0.658571, 0.7, 0.758571, 0.8, 0.858571, 0.9, 0.958571)
+colors = PackedColorArray(1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 1)
+script = ExtResource("1")
 repetitions = 9
-gradient = SubResource( 7 )
+gradient = SubResource("7")
 repeat_back_to_back = false
 
-[sub_resource type="GradientTexture2D" id=9]
-gradient = SubResource( 8 )
+[sub_resource type="GradientTexture2D" id="9"]
+gradient = SubResource("8")
 width = 256
 height = 256
 fill = 1
-fill_to = Vector2( 1, 1 )
+fill_to = Vector2(1, 1)
 
-[sub_resource type="Gradient" id=10]
-offsets = PoolRealArray( 0, 0.05, 0.1, 0.15, 0.2, 0.2, 0.25, 0.3, 0.35, 0.4, 0.4, 0.45, 0.5, 0.55, 0.6, 0.6, 0.65, 0.7, 0.75, 0.8, 0.8, 0.85, 0.9, 0.95, 1 )
-colors = PoolColorArray( 1, 0, 0, 1, 0.72974, 0.72974, 0, 1, 0, 1, 0, 1, 0, 0.72974, 0.72974, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0.72974, 0.72974, 1, 0, 1, 0, 1, 0.72974, 0.72974, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0.72974, 0.72974, 0, 1, 0, 1, 0, 1, 0, 0.72974, 0.72974, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0.72974, 0.72974, 1, 0, 1, 0, 1, 0.72974, 0.72974, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0.72974, 0.72974, 0, 1, 0, 1, 0, 1, 0, 0.72974, 0.72974, 1, 0, 0, 1, 1 )
-script = ExtResource( 1 )
-repetitions = 4
-gradient = SubResource( 5 )
+[sub_resource type="Gradient" id="10"]
+offsets = PackedFloat32Array(0, 0.0416667, 0.0833333, 0.125, 0.166667, 0.166667, 0.208333, 0.25, 0.291667, 0.333333, 0.333333, 0.375, 0.416667, 0.458333, 0.5, 0.5, 0.541667, 0.583333, 0.625, 0.666667, 0.666667, 0.708333, 0.75, 0.791667, 0.833333, 0.833333, 0.875, 0.916667, 0.958333, 1)
+colors = PackedColorArray(1, 0, 0, 1, 0.72974, 0.72974, 0, 1, 0, 1, 0, 1, 0, 0.72974, 0.72974, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0.72974, 0.72974, 1, 0, 1, 0, 1, 0.72974, 0.72974, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0.72974, 0.72974, 0, 1, 0, 1, 0, 1, 0, 0.72974, 0.72974, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0.72974, 0.72974, 1, 0, 1, 0, 1, 0.72974, 0.72974, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0.72974, 0.72974, 0, 1, 0, 1, 0, 1, 0, 0.72974, 0.72974, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0.72974, 0.72974, 1, 0, 1, 0, 1, 0.72974, 0.72974, 0, 1, 1, 0, 0, 1)
+script = ExtResource("1")
+repetitions = 5
+gradient = SubResource("5")
 repeat_back_to_back = true
 
-[sub_resource type="GradientTexture2D" id=11]
-gradient = SubResource( 10 )
+[sub_resource type="GradientTexture2D" id="11"]
+gradient = SubResource("10")
 width = 256
 height = 256
 fill = 1
-fill_to = Vector2( 1, 1 )
+fill_to = Vector2(1, 1)
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D" type="CanvasLayer"]
 
-[node name="TextureRect" type="TextureRect" parent="."]
-margin_left = 63.0
-margin_top = 101.0
-margin_right = 319.0
-margin_bottom = 357.0
-rect_min_size = Vector2( 256, 0 )
-texture = SubResource( 2 )
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="TextureRect1" type="TextureRect" parent="."]
-margin_left = 63.0
-margin_top = 401.0
-margin_right = 319.0
-margin_bottom = 657.0
-rect_min_size = Vector2( 256, 0 )
-texture = SubResource( 13 )
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer"]
+layout_mode = 2
 
-[node name="TextureRect2" type="TextureRect" parent="."]
-margin_left = 363.0
-margin_top = 101.0
-margin_right = 619.0
-margin_bottom = 357.0
-rect_min_size = Vector2( 256, 0 )
-texture = SubResource( 4 )
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/HBoxContainer"]
+layout_mode = 2
 
-[node name="TextureRect3" type="TextureRect" parent="."]
-margin_left = 363.0
-margin_top = 401.0
-margin_right = 619.0
-margin_bottom = 657.0
-rect_min_size = Vector2( 256, 0 )
-texture = SubResource( 6 )
-
-[node name="TextureRect4" type="TextureRect" parent="."]
-margin_left = 663.0
-margin_top = 101.0
-margin_right = 919.0
-margin_bottom = 357.0
-rect_min_size = Vector2( 256, 0 )
-texture = SubResource( 9 )
-
-[node name="TextureRect5" type="TextureRect" parent="."]
-margin_left = 663.0
-margin_top = 401.0
-margin_right = 919.0
-margin_bottom = 657.0
-rect_min_size = Vector2( 256, 0 )
-texture = SubResource( 11 )
-
-[node name="Label" type="Label" parent="."]
-margin_left = 60.0
-margin_top = 61.0
-margin_right = 316.0
-margin_bottom = 88.0
+[node name="Label" type="Label" parent="CenterContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
 text = "Built-in Gradient"
-align = 1
+horizontal_alignment = 1
 
-[node name="Label2" type="Label" parent="."]
-margin_left = 362.0
-margin_top = 61.0
-margin_right = 618.0
-margin_bottom = 88.0
+[node name="TextureRect" type="TextureRect" parent="CenterContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+texture = SubResource("2")
+
+[node name="TextureRect1" type="TextureRect" parent="CenterContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+texture = SubResource("13")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="CenterContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="CenterContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
 text = "FancyGradient"
-align = 1
+horizontal_alignment = 1
 
-[node name="Label3" type="Label" parent="."]
-margin_left = 669.0
-margin_top = 61.0
-margin_right = 925.0
-margin_bottom = 88.0
+[node name="TextureRect2" type="TextureRect" parent="CenterContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+texture = SubResource("4")
+
+[node name="TextureRect3" type="TextureRect" parent="CenterContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+texture = SubResource("6")
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="CenterContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="CenterContainer/HBoxContainer/VBoxContainer3"]
+layout_mode = 2
 text = "RepeatingGradient"
-align = 1
+horizontal_alignment = 1
+
+[node name="TextureRect4" type="TextureRect" parent="CenterContainer/HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+texture = SubResource("9")
+
+[node name="TextureRect5" type="TextureRect" parent="CenterContainer/HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+texture = SubResource("11")
