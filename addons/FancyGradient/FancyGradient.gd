@@ -6,26 +6,40 @@ extends Gradient
 
 export(Array, Color) var custom_colors = [Color.white, Color.black] setget _update_custom_colors
 export(int, "Don't add", "Gamma", "sRGB") var add_corrected_middle_point = 0 setget _update_corrected
-
-
+export(float, 0.0, 1.0) var color_point_persistence = 0.0 setget _update_persistence
+export(bool) var overrepresent_edges := false setget _update_edges
 func _update():
 	var offsets_ = []
 	var colors_ = []
+	var initial_offset = 0.0
 	var offset_delta = (1.0 / (len(custom_colors) - 1))
+	if overrepresent_edges:
+		offset_delta = 1.0 / len(custom_colors)
+		initial_offset = offset_delta * 0.5
 	for i in len(custom_colors) - 1:
-		colors_.append(custom_colors[i])
-		offsets_.append(offset_delta * i)
-		if add_corrected_middle_point:
-			offsets_.append(offset_delta * i + offset_delta * 0.5)
+		if color_point_persistence == 0.0:
+			colors_.append(custom_colors[i])
+			offsets_.append(offset_delta * i + initial_offset)
+		if color_point_persistence > 0.0:
+			if i > 0:
+				colors_.append(custom_colors[i])
+				offsets_.append(offset_delta * i - offset_delta * color_point_persistence * 0.5 + initial_offset)
+			if i < len(custom_colors) - 1:
+				colors_.append(custom_colors[i])
+				offsets_.append(offset_delta * i + offset_delta * color_point_persistence * 0.5 + initial_offset)
+
+		if color_point_persistence < 1.0 and add_corrected_middle_point:
+			offsets_.append(offset_delta * i + offset_delta * 0.5 + initial_offset)
 			match add_corrected_middle_point:
 				1:
 					colors_.append(blend_colors_gamma_corrected(custom_colors[i], custom_colors[i + 1], 0.5))
 				2:
 					colors_.append(blend_colors_srgb(custom_colors[i], custom_colors[i + 1], 0.5))
-					
-		
+						
+	# Add the final color at the end of the gradient
 	colors_.append(custom_colors[-1])
-	offsets_.append(1.0)
+	offsets_.append(1.0 - offset_delta * color_point_persistence * 0.5 - initial_offset)
+		
 
 	offsets = PoolRealArray(offsets_)
 	colors = PoolColorArray(colors_)
@@ -40,6 +54,16 @@ func _update_custom_colors(value):
 
 func _update_corrected(value):
 	add_corrected_middle_point = value
+	_update()
+	
+	
+func _update_persistence(value):
+	color_point_persistence = value
+	_update()	
+	
+	
+func _update_edges(value):
+	overrepresent_edges = value
 	_update()
 
 
