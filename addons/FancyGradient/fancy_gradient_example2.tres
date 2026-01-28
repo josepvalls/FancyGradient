@@ -1,0 +1,12 @@
+[gd_resource type="Gradient" load_steps=2 format=2]
+
+[ext_resource path="res://addons/FancyGradient/FancyGradient.gd" type="Script" id=1]
+
+[resource]
+offsets = PoolRealArray( 0.3, 0.333333, 0.366667, 0.633333, 0.666667, 0.7 )
+colors = PoolColorArray( 0, 0, 0, 1, 0.362249, 0.362249, 0.362249, 1, 0.501961, 0.501961, 0.501961, 1, 0.501961, 0.501961, 0.501961, 1, 0.802416, 0.802416, 0.802416, 1, 1, 1, 1, 1 )
+script = ExtResource( 1 )
+custom_colors = [ Color( 0, 0, 0, 1 ), Color( 0.501961, 0.501961, 0.501961, 1 ), Color( 1, 1, 1, 1 ) ]
+add_corrected_middle_point = 2
+color_point_persistence = 0.8
+overrepresent_edges = true
